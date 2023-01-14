@@ -8,6 +8,10 @@
 
     display: flex;
     justify-content: space-between;
+
+    /* Animations */
+    transition-timing-function: ease-in;
+    transform-style: all 0.9s;
 }
 
 .nav__black {
