@@ -10,10 +10,15 @@ function App() {
   const user = null;
 
   useEffect(() => {
-    auth.onAuthStateChanged(userAuth => {
-
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      if (userAuth) {
+        console.log(userAuth)
+      } else {
+        // Logged out
+      }
     })
-  }, [])
+    return unsubscribe;
+  }, []) 
 
   return (
     <div className="app">
