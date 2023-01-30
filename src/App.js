@@ -4,21 +4,32 @@ import './App.css';
 import HomeScreen from "./Components/HomeScreen";
 import LoginScreen from "./Components/LoginScreen";
 import { auth } from "./firebase";
+import { useDispatch } from 'react-redux'
+import { login, logout } from "./feature/userSlice";
 
 
 function App() {
   const user = null;
+  const dispatch = useDispatch()
+
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(userAuth => {
       if (userAuth) {
-        console.log(userAuth)
+        // Logged in
+        dispatch(
+          login({
+            uid: userAuth.uid,
+            email: userAuth.email
+          })
+        );
       } else {
         // Logged out
+        dispatch(logout)
       }
     })
     return unsubscribe;
-  }, []) 
+  }, [])
 
   return (
     <div className="app">
