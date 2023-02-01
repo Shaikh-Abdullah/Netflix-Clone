@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import "./Nav.css"
 
 function Nav() {
     const [show, handleShow] = useState(false)
+    const history = useHistory()
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -19,6 +21,7 @@ function Nav() {
                 alt="Netflix Logo" />
 
             <img
+                onClick={() => history.push('/profile')}
                 className='nav__avatar'
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4tBKNakmXzPe6qvuFChy4GjzHHo_Us5SbObkuJh-RoA&s"
                 alt="Netflix avatar" />

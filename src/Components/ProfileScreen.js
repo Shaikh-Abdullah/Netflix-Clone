@@ -4,7 +4,7 @@ import './ProfileScreen.css'
 function ProfileScreen() {
     return (
         <div className='profileScreen'>
-            <h1>THis is ProfieScreen</h1>
+            <h1>This is ProfieScreen</h1>
         </div>
     )
 }
