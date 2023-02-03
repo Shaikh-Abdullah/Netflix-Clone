@@ -16,6 +16,7 @@ function Nav() {
     return (
         <div className={`nav ${show && "nav__black"}`}>
             <img
+                onClick={() => history.push("/")}
                 className='nav__logo'
                 src="https://1000logos.net/wp-content/uploads/2017/05/Netflix-symbol-500x157.jpg"
                 alt="Netflix Logo" />

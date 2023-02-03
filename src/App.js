@@ -27,11 +27,12 @@ function App() {
         );
       } else {
         // Logged out
-        dispatch(logout)
+        dispatch(logout())
       }
     })
     return unsubscribe;
-  }, [])
+  }, [dispatch])
+
 
   return (
     <div className="app">
@@ -46,10 +47,8 @@ function App() {
               <Route path="/profile">
                 <ProfileScreen />
               </Route>
-
           </Switch>
         )}
-
       </Router>
     </div>
   );
