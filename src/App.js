@@ -39,7 +39,7 @@ function App() {
           <LoginScreen />
         ) : (
             <Switch>
-              <Route path="/" exact>
+              <Route path="/Netflix-Clone" exact>
                 <HomeScreen />
               </Route>
               <Route path="/profile">
